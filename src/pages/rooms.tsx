@@ -5,6 +5,7 @@ import { useQuery } from "react-query";
 import RoomListingFilters from "@/components/organisms/room-listing-filters";
 import { IRoomListingFilters } from "@/types/room-filters";
 import { RoomBookingContext } from "@/contexts/room-booking";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const RoomListingPage = () => {
   const { bookings } = React.useContext(RoomBookingContext);
@@ -42,8 +43,16 @@ const RoomListingPage = () => {
     <div className="flex flex-col gap-8">
       <RoomListingFilters filters={filters} updateFilters={setFilters} />
       {isLoading ? (
-        <div className="flex justify-center items-center bg-slate-100 h-96 rounded-md">
-          Fetching available rooms...
+        // Code for loading skeleton can be moved to separate component
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <Skeleton className="w-full h-48 rounded-md" />
+          <Skeleton className="w-full h-48 rounded-md" />
+          <Skeleton className="w-full h-48 rounded-md" />
+          <Skeleton className="w-full h-48 rounded-md" />
+          <Skeleton className="w-full h-48 rounded-md" />
+          <Skeleton className="w-full h-48 rounded-md" />
+          <Skeleton className="w-full h-48 rounded-md" />
+          <Skeleton className="w-full h-48 rounded-md" />
         </div>
       ) : rooms?.length === 0 ? (
         <div>
