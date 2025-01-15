@@ -17,7 +17,7 @@ const RoomListingFilters: React.FC<Props> = ({ filters, updateFilters }) => {
   });
 
   return (
-    <div className="flex flex-row gap-4 items-center">
+    <div className="flex flex-row gap-4 items-center flex-wrap">
       <Select
         label="Location"
         placeholder="Choose destination"

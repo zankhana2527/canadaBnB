@@ -8,7 +8,9 @@ const RootLayout = () => {
       <header className="px-12 py-4 border-b border-b-slate-300 bg-slate-50">
         <div className="flex items-center justify-between">
           <Logo />
-          <Link href="#" label="List your room" />
+          <div className="hidden sm:block">
+            <Link href="#" label="List your room" />
+          </div>
         </div>
       </header>
       <main>
